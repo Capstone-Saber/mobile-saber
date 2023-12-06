@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Saber</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="menu_dashboard">Dashboard</string>
+    <string name="menu_history">History</string>
+    <string name="menu_profile">Profile</string>
 </resources>
