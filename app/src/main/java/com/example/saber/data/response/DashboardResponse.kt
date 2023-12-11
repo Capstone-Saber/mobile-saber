@@ -15,8 +15,8 @@ data class DashboardResponse (
 
 data class DashboardDataItem(
     @field:SerializedName("timestamp")
-    val status: String,
+    val timestamp: String,
 
     @field:SerializedName("avgPower")
-    val message:Int,
+    val avgPower:Int,
 )

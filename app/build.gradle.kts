@@ -16,6 +16,8 @@ android {
         versionCode = 1
         versionName = "1.0"
 
+        buildConfigField("String", "BASE_URL", "\"https://saber-backend-gquk47qgta-et.a.run.app/v1/\"")
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
@@ -42,6 +44,7 @@ android {
         compose = true
         viewBinding = true
         mlModelBinding = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.3"
@@ -67,6 +70,7 @@ dependencies {
     implementation("io.coil-kt:coil-compose:2.2.0")
 
     implementation("com.google.accompanist:accompanist-systemuicontroller:0.30.1")
+    implementation("org.tensorflow:tensorflow-lite-gpu:2.3.0")
 
     testImplementation("junit:junit:4.13.2")
     testImplementation("junit:junit:4.13.2")

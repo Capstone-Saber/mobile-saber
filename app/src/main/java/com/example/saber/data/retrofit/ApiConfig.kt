@@ -1,28 +1,25 @@
 package com.example.saber.data.retrofit
 
-import okhttp3.Interceptor
+import com.example.saber.BuildConfig
+import dagger.Provides
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-
 object ApiConfig {
+    private const val BASE_URL = BuildConfig.BASE_URL
     fun getApiService(): ApiService {
         val loggingInterceptor =
-            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-        val authInterceptor = Interceptor { chain ->
-            val req = chain.request()
-            val requestHeaders = req.newBuilder()
-                .build()
-            chain.proceed(requestHeaders)
-        }
+            if (BuildConfig.DEBUG)
+                HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+            else
+                HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)
         val client = OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
-            .addInterceptor(authInterceptor)
             .build()
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://story-api.dicoding.dev/v1/")
+            .baseUrl("https://saber-backend-gquk47qgta-et.a.run.app/v1/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()

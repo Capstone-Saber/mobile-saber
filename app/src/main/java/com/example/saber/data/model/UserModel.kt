@@ -1,4 +1,4 @@
-package com.example.saber.data.pref
+package com.example.saber.data.model
 
 data class UserModel(
     val name:String,
