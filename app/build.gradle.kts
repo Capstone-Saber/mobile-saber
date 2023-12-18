@@ -70,7 +70,7 @@ dependencies {
     implementation("io.coil-kt:coil-compose:2.2.0")
 
     implementation("com.google.accompanist:accompanist-systemuicontroller:0.30.1")
-    implementation("org.tensorflow:tensorflow-lite-gpu:2.3.0")
+    implementation("org.tensorflow:tensorflow-lite-gpu:2.4.0")
 
     testImplementation("junit:junit:4.13.2")
     testImplementation("junit:junit:4.13.2")

@@ -44,6 +44,9 @@ fun DashboardPage(
     }
     datasetForModel.add(dataPoints)
     modelProducer.setEntries(datasetForModel)
+    if (state.isLoading) {
+        CircularProgressIndicator()
+    }
     if (state.error.isNotBlank()) {
         Text(text = state.error, color = MaterialTheme.colorScheme.error)
     }
@@ -52,9 +55,6 @@ fun DashboardPage(
             modifier = modifier,
             model = modelProducer
         )
-    }
-    if (state.isLoading) {
-        CircularProgressIndicator()
     }
 }
 
