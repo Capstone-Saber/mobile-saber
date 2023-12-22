@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import com.example.saber.ml.Model
 import com.example.saber.ml.ModelKwh2
 import com.example.saber.ml.SavedModel
+
 import com.example.saber.ui.theme.SaberTheme
 import dagger.hilt.android.AndroidEntryPoint
 import org.tensorflow.lite.DataType
@@ -135,4 +136,6 @@ fun Ngemodel(context: Context) {
 
 // Releases model resources if no longer used.
     model.close()
+
 }
+
